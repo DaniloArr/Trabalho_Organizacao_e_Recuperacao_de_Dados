@@ -61,7 +61,7 @@ int lendo_linha(char campo[], int tamanho, FILE *file){
 
 }
 
-void importacao(char nomeArquivoImportacao[])  //  ./programa -i nome_arquivo_importacao.txt
+void importacao(char nomeArquivoImportacao[])  //  ./programa -i nome_arquivo_importacao.txt        
 {
     FILE *arquivoOriginal;
     FILE *arquivoDados;
@@ -295,7 +295,8 @@ void operacoes(char *argv)  // ./programa -e nome_do_arquivo.txt     para realiz
     
 }
 
-int imprime_ped(){                                          // vai imprimir os valores na PED que estão livres 
+// vai imprimir os valores na PED que estão livres 
+int imprime_ped(){                                          // ./programa -p 
 
     FILE *dados;
     dados = fopen("dados.dat", "rb");
