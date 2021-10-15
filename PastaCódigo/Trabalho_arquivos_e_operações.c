@@ -2,15 +2,15 @@
 #include <stdlib.h>
 #include <string.h>
 #include <locale.h>
-#define COMP_REG 64
-#define COMP_CAMPO 60
+#define COMP_REG 64   //tamanho do registro
+#define COMP_CAMPO 60 //tamanho do campo (regsitro menos o cabeçalho)
 
 int proximoRegistro(char registro[64], FILE *file);
 
 
 struct{
     int topo_ped;
-}cab; // cabeçalho do arquivo ( 4 bytes)
+}cab; // cabeçalho do arquivo ( 4 bytes) 
 
 int byteoffset(int RRN)
 {
@@ -43,7 +43,7 @@ int lendo_linha(char campo[], int tamanho, FILE *file){
     int i = 0;
     char k = fgetc(file);
 
-    
+    //Leitura dos caracteres ate atingir o delimitador('\n')
     while (k != '\n')
     {
         if (feof(file)) 
@@ -167,7 +167,7 @@ void operacoes(char *argv)  // ./programa -e nome_do_arquivo.txt     para realiz
     char buffer [COMP_REG];
     char def_op;  //definição de qual operação vai ser feita
     char chave[7];
-    int RRN; //RRN está como o RRN
+    int RRN; 
 
     operacoesFile = fopen(argv, "rb");
     dados = fopen("dados.dat", "r+b");
